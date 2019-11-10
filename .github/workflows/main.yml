@@ -16,5 +16,6 @@ jobs:
       - uses: actions/setup-node@v1
       - name: "Run test suite"
         uses: msfjarvis/setup-android@1.0
-      - name: "clean"
-        run: cd android && ./gradlew clean
+        with:
+          entrypoint: cd android && ./gradlew clean
+          args: dependencies spotlessApply detekt assembleDebug
