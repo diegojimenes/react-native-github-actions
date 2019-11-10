@@ -12,16 +12,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - name: "Run test suite"
+        uses: msfjarvis/setup-android@1.0
         with:
-          node-version: 12
-      - name: "vai se fuder"
-      - uses: msfjarvis/setup-android@1.0
-        with:
-          entrypoint: ./gradlew
+          entrypoint: ./android/gradlew
           args: dependencies spotlessApply detekt assembleDebug
-      - run: yarn
-      - run: yarn clean
-      - run: yarn test
-      - run: yarn build
