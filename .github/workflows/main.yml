@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: "Run test suite"
+      - name: "vai se fuder"
       - uses: msfjarvis/setup-android@1.0
         with:
           entrypoint: ./gradlew
