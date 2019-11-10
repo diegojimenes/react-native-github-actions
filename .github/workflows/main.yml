@@ -17,6 +17,3 @@ jobs:
       - run: cd android && ls
       - name: "Run test suite"
         uses: msfjarvis/setup-android@1.0
-        with:
-          entrypoint: ./android
-          args: dependencies spotlessApply detekt assembleDebug
