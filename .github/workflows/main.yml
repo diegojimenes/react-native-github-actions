@@ -12,4 +12,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: cd android && ./gradlew clean
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+      - run: cd android && ls
