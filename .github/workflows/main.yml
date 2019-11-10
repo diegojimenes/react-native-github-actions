@@ -16,7 +16,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - uses: msfjarvis/setup-android@0.2
+      - name: Gradle Android
+        uses: Raul6469/android-gradle-action@1.0.0
       - run: yarn
       - run: chmod +x android/gradlew
       - run: yarn clean
