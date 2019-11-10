@@ -14,6 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
-      - run: cd android && ls
       - name: "Run test suite"
         uses: msfjarvis/setup-android@1.0
+      - name: "clean"
+        run: cd android && ./gradlew clean
