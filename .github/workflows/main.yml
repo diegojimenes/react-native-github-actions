@@ -14,10 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
-      - name: setup-android
-        uses: msfjarvis/setup-android@0.2
         with:
           node-version: 12
+      - uses: msfjarvis/setup-android@0.2
       - run: yarn
       - run: chmod +x android/gradlew
       - run: yarn clean
