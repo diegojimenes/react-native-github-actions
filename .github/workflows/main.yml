@@ -14,9 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
-      - uses: Raul6469/android-gradle-action@1.0.0
         with:
           node-version: 12
+      - name: "Run test suite"
+      - uses: msfjarvis/setup-android@1.0
+        with:
+          entrypoint: ./gradlew
+          args: dependencies spotlessApply detekt assembleDebug
       - run: yarn
       - run: yarn clean
       - run: yarn test
