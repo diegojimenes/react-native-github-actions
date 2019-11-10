@@ -12,6 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - run: CHMOD 777 -R
       - name: "Run test suite"
         uses: msfjarvis/setup-android@1.0
       - run: cd android && ./gradlew clean
