@@ -12,12 +12,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: Raul6469/android-gradle-action@1.0.0
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: Gradle Android
-        uses: Raul6469/android-gradle-action@1.0.0
       - run: yarn
       - run: yarn clean
       - run: yarn test
