@@ -17,5 +17,5 @@ jobs:
       - name: "Run test suite"
         uses: msfjarvis/setup-android@1.0
         with:
-          entrypoint: ./android/
-          args: gradlew clean
+          entrypoint: ./android
+          args: chmod 777 -R && gradlew clean
