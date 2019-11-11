@@ -15,9 +15,11 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
       - name: "set permission"
-        run: chmod -R 777 ./android
+        run: |
+          apt install tree
+          tree
       - name: "Run test suite"
         uses: msfjarvis/setup-android@1.0
         with:
-          entrypoint: ./react-native-github-actions/android
+          entrypoint: ./android/gradlew
           args: dependencies spotlessApply detekt assembleDebug
