@@ -14,8 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
-      - name: "Run test suite"
-        uses: msfjarvis/setup-android@1.0
-        with:
-          entrypoint: sudo ./android/gradlew
-          args: dependencies spotlessApply detekt assembleDebug
+      - uses: msfjarvis/setup-android@1.0
+      - name: "run"
+        run: ./android/gradlew dependencies spotlessApply detekt assembleDebug
