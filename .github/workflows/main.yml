@@ -14,6 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
+      - name: "set permission"
+        run: chmod 777 ./android -R
       - name: "Run test suite"
         uses: msfjarvis/setup-android@1.0
         with:
