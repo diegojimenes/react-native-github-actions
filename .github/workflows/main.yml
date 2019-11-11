@@ -14,8 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
-      - name: "ls" 
-        run: ls ./android
+      - name: "chmod" 
+        run: chmod a+x ./android/gradlew
       - uses: msfjarvis/setup-android@1.0
         with:
           entrypoint: ./android/gradlew
