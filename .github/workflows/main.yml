@@ -19,5 +19,5 @@ jobs:
       - name: "Run test suite"
         uses: msfjarvis/setup-android@1.0
         with:
-          entrypoint: ./android
+          entrypoint: ./react-native-github-actions/android
           args: dependencies spotlessApply detekt assembleDebug
