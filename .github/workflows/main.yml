@@ -15,5 +15,6 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
       - uses: msfjarvis/setup-android@1.0
-      - name: "run"
-        run: ./android/gradlew dependencies spotlessApply detekt assembleDebug
+        with:
+          entrypoint: ./android/gradlew
+          args: gradlew clean
