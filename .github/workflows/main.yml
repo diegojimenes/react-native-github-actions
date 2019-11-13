@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-node@v1
       - name: "install dependecie"
         run: yarn install
+      - name: "oi"
+        run: echo oi
       - name: "chmod" 
         run: chmod a+x ./android/gradlew
       - uses: Raul6469/android-gradle-action
