@@ -24,4 +24,6 @@ jobs:
       - uses: eskatos/gradle-command-action@v1
         with:
          wrapper-directory: ./android
-         arguments: build
+         arguments: bundleRelease
+      - name: "ls"
+        run: find android/app/build/outputs/apk -type f 
