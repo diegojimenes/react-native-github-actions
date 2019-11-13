@@ -21,4 +21,4 @@ jobs:
       - uses: msfjarvis/setup-android@1.0
         with:
           entrypoint: ./android/gradlew
-          args: clean
+          args: assembleRelease
