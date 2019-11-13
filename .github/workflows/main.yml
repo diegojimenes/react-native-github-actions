@@ -20,5 +20,5 @@ jobs:
         run: chmod a+x ./android/gradlew
       - uses: msfjarvis/setup-android@1.0
         with:
-          entrypoint: ./android/gradlew
+          entrypoint: ./android/gradlew clean
           args: assembleRelease
