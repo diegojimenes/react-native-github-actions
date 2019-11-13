@@ -15,9 +15,9 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
       - name: "install dependecie"
-        run: yarn
+        run: yarn install
       - name: "chmod" 
         run: chmod a+x ./android/gradlew
-      - uses: Raul6469/android-gradle-action@master
+      - uses: Raul6469/android-gradle-action
         with:
           args: clean
