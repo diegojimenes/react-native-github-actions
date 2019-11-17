@@ -22,7 +22,7 @@ jobs:
         with:
           java-version: 11
       - name: "android-version"
-        run: android --version 
+        run: java --version 
       - uses: eskatos/gradle-command-action@v1
         with:
          wrapper-directory: ./android
