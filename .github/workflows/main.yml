@@ -17,7 +17,7 @@ jobs:
       - name: "install dependecie"
         run: yarn install
       - name: "oi"
-        run: echo oi
+        run: echo oil
       - name: "chmod" 
         run: chmod a+x ./android/gradlew
       - uses: Raul6469/android-gradle-action
