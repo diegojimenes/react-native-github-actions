@@ -21,7 +21,9 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: "android-version"
+        run: android --version 
       - uses: eskatos/gradle-command-action@v1
         with:
          wrapper-directory: ./android
-         arguments: check --scan
+         arguments: build
