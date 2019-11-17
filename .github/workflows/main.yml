@@ -24,4 +24,4 @@ jobs:
       - uses: eskatos/gradle-command-action@v1
         with:
          wrapper-directory: ./android
-         arguments: build
+         arguments: check --scan
