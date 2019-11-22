@@ -22,4 +22,4 @@ jobs:
     - name: Dependências do projeto
       run: yarn install
     - name: "BUILD"
-      run: cd android && ./gradlew assembleRelease && cd ..
+      run: cd android && chmod a+x gradlew &&./gradlew assembleRelease && cd ..
