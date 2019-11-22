@@ -9,6 +9,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - uses: actions/setup-java@v1
+      with:
+        java-version: 11
+    - name: "gradlew"
+      run: witch -a gralde
     - uses: actions/setup-node@v1
       with:
         node-version: '10.15.3'
