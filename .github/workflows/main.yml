@@ -13,7 +13,7 @@ jobs:
       with:
         java-version: 11
     - name: "gradlew"
-      run: which -a gralde
+      run: which -a gradle
     - uses: actions/setup-node@v1
       with:
         node-version: '10.15.3'
