@@ -1,29 +1,21 @@
-name: Node.js Package
+name: Build desenvolvimento
 
-on:
-  pull_request:
-    branches:
-      - master
-  push:
-    branches:
-      - master
+on: [push]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-      - name: "install dependecie"
-        run: yarn
-      - name: "chmod" 
-        run: chmod a+x ./android/gradlew
-      - uses: actions/setup-java@v1
-        with:
-          java-version: 11
-      - name: "android-version"
-        run: java --version 
-      - uses: eskatos/gradle-command-action@v1
-        with:
-         wrapper-directory: ./android
-         arguments: build
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.15.3'
+    - name: Dependências do projeto
+      run: yarn install
+    - uses: eskatos/gradle-command-action@v1
+      with:
+        build-root-directory: ./android  
+        wrapper-directory: ./android
+        arguments: assembleRelease
