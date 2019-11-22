@@ -13,14 +13,13 @@ jobs:
       with:
         java-version: 11
     - name: "gradlew"
-      run: which -a gradle
+      run: |
+        which -a gradle
+        gradle --version
     - uses: actions/setup-node@v1
       with:
         node-version: '10.15.3'
     - name: Dependências do projeto
       run: yarn install
-    - uses: eskatos/gradle-command-action@v1
-      with:
-        build-root-directory: ./android  
-        wrapper-directory: ./android
-        arguments: assembleRelease
+    - name: "BUILD"
+      run: cd android && ./gradlew assembleRelease && cd ..
