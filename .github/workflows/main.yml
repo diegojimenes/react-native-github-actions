@@ -19,7 +19,7 @@ jobs:
           ${{ runner.os }}-node-
     - name: Dependências do projeto
       if: steps.cache.outputs.cache-hit != 'true'
-      run: yarn
+      run: yarn install
     - name: Executar testes
       run: |
         yarn test
@@ -40,7 +40,7 @@ jobs:
           ${{ runner.os }}-node-
     - name: Dependências do projeto
       if: steps.cache.outputs.cache-hit != 'true'
-      run: yarn
+      run: yarn install
     - name: "adicionando permissoes"
       run: cd android && chmod a+x gradlew
     - name: "gerar apk"
