@@ -24,4 +24,4 @@ jobs:
     - name: "BUILD"
       run: cd android && chmod a+x gradlew &&./gradlew assembleRelease && cd ..
     - name: "get apk"
-      run: cd android && cd app & cd build && cd outputs && ls
+      run: cd android && cd app && cd src && cd build && cd outputs && ls
