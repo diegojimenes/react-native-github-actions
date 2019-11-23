@@ -17,8 +17,8 @@ jobs:
     - name: "adicionando permissoes"
       run: cd android && chmod a+x gradlew
     - name: "gerar apk"
-      run: ./gradlew assembleRelease && cd ..
-    - name: "get apk"
+      run: cd android && ./gradlew assembleRelease && cd ..
+    - name: "pegar apk"
       run: cd android && tree app/build/outputs
     - uses: actions/upload-artifact@v1
       with:
