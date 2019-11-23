@@ -21,7 +21,9 @@ jobs:
         node-version: '10.15.3'
     - name: Dependências do projeto
       run: yarn install
+    - name: "tree"
+      run: sudo apt-get install tree
     - name: "BUILD"
       run: cd android && chmod a+x gradlew &&./gradlew assembleRelease && cd ..
     - name: "get apk"
-      run: cd android && cd app && cd src && cd build && cd outputs && ls
+      run: cd android && tree app
