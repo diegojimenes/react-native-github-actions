@@ -1,4 +1,4 @@
-name: rodandos testes
+name: testes
 
 on: [pull_request]
 
