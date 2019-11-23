@@ -1,0 +1,26 @@
+name: rodandos testes
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.15.3'
+    - uses: actions/cache@preview
+      id: cache
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - name: Dependências do projeto
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: |
+        yarn
+    - name: Executar testes
+      run: |
+        yarn test
