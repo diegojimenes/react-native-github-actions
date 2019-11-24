@@ -23,6 +23,7 @@ jobs:
     - name: Executar testes
       run: |
         yarn test
+
   build:
     needs: [testes]
     runs-on: ubuntu-latest
@@ -49,3 +50,12 @@ jobs:
       with:
         name: apk-release
         path: android/app/build/outputs/apk/release/app-release.apk
+
+  gerando_release:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: "gerando tag"
+        run: git tag NOME_DA_VERSAO -a
+      - name: "enviando tag"
+        run: git push origin --tags
