@@ -56,7 +56,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Bump version and push tag
-        uses: wiktorj/github-tag-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Tag commit
+        uses: tvdias/github-tagger
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          tag: "my_tag"
