@@ -56,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: "gerando tag"
-        run: git tag NOME_DA_VERSAO -a
-      - name: "enviando tag"
-        run: git push origin --tags
+      - name: Bump version and push tag
+        uses: wiktorj/github-tag-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
