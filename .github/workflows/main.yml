@@ -50,13 +50,7 @@ jobs:
       with:
         name: apk-release
         path: android/app/build/outputs/apk/release/app-release.apk
-
-  gerando_release:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: tvdias/github-tagger
-        with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          tag: "my_tag"
+    - name: Bump version and push tag
+      uses: mathieudutour/github-tag-action@v1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
